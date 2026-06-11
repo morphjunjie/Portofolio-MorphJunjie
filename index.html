@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Morph Junjie Kartawidjaja – Mathematics Science Student at KAIST. Portfolio showcasing mathematics, programming, research, and digital innovation." />
+  <title>Morph Junjie Kartawidjaja</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── CANVAS FOR PARTICLES ── -->
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- ── NOISE OVERLAY ── -->
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <span class="logo-mark">MJ</span>
+      <span class="logo-text">Morph</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about"          data-i18n="nav.about">About</a></li>
+      <li><a href="#skills"         data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#collabs"        data-i18n="nav.collabs">Collabs</a></li>
+      <li><a href="#projects"       data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#education"      data-i18n="nav.education">Education</a></li>
+      <li><a href="#stats"          data-i18n="nav.stats">Stats</a></li>
+      <li><a href="#testimonials"   data-i18n="nav.testimonials">Reviews</a></li>
+      <li><a href="#contact"        data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher" role="group" aria-label="Language switcher">
+        <button class="lang-btn active" data-lang="en"  aria-pressed="true">EN</button>
+        <button class="lang-btn"        data-lang="id"  aria-pressed="false">ID</button>
+        <button class="lang-btn"        data-lang="ko"  aria-pressed="false">한국어</button>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#about"          data-i18n="nav.about">About</a></li>
+      <li><a href="#skills"         data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#collabs"        data-i18n="nav.collabs">Collabs</a></li>
+      <li><a href="#projects"       data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#education"      data-i18n="nav.education">Education</a></li>
+      <li><a href="#stats"          data-i18n="nav.stats">Stats</a></li>
+      <li><a href="#testimonials"   data-i18n="nav.testimonials">Reviews</a></li>
+      <li><a href="#contact"        data-i18n="nav.contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero introduction">
+  <div class="hero-aurora" aria-hidden="true">
+    <div class="aurora-blob a1"></div>
+    <div class="aurora-blob a2"></div>
+    <div class="aurora-blob a3"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge reveal-fade" data-i18n="hero.badge">Mathematics Science · KAIST · Semester 4</div>
+
+      <h1 class="hero-name reveal-fade" style="--delay:.1s">
+        Morph Junjie<br /><span class="name-accent">Kartawidjaja</span>
+      </h1>
+
+      <div class="hero-role reveal-fade" style="--delay:.2s" aria-live="polite">
+        <span class="role-prefix" data-i18n="hero.rolePrefix">I'm a&nbsp;</span>
+        <span class="role-rotating" id="rotating-role">Mathematics Enthusiast</span>
+      </div>
+
+      <p class="hero-tagline reveal-fade" style="--delay:.3s" data-i18n="hero.tagline">
+        Building elegant digital experiences through mathematics,<br />programming, research, and innovation.
+      </p>
+
+      <div class="hero-buttons reveal-fade" style="--delay:.4s">
+        <a href="#projects" class="btn-primary" data-i18n="hero.btnProjects">View Projects</a>
+        <a href="#contact"  class="btn-ghost"   data-i18n="hero.btnContact">Contact Me</a>
+      </div>
+
+      <div class="hero-stats reveal-fade" style="--delay:.5s" role="list">
+        <div class="hero-stat" role="listitem">
+          <span class="stat-value">2024</span>
+          <span class="stat-label" data-i18n="hero.stat1">Joined KAIST</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem">
+          <span class="stat-value">4</span>
+          <span class="stat-label" data-i18n="hero.stat2">Semester</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem">
+          <span class="stat-value">12+</span>
+          <span class="stat-label" data-i18n="hero.stat3">Languages</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem">
+          <span class="stat-value">R&amp;D</span>
+          <span class="stat-label" data-i18n="hero.stat4">Focus</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal-fade" style="--delay:.3s">
+      <div class="profile-frame">
+        <div class="profile-ring r1" aria-hidden="true"></div>
+        <div class="profile-ring r2" aria-hidden="true"></div>
+        <img
+          src="assets/profile/profile.png"
+          alt="Morph Junjie Kartawidjaja"
+          class="profile-img"
+          loading="eager"
+          onerror="this.style.display='none'"
+        />
+        <div class="profile-placeholder" aria-hidden="true">MJ</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span class="scroll-line"></span>
+    <span class="scroll-label" data-i18n="hero.scroll">Scroll</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════ -->
+<section id="about" class="section" aria-label="About Morph">
+  <div class="container">
+    <div class="section-eyebrow reveal-fade" data-i18n="about.eyebrow">Who I Am</div>
+    <h2 class="section-title reveal-fade" style="--delay:.1s" data-i18n="about.title">About Me</h2>
+
+    <div class="about-grid">
+      <div class="about-card glass-card reveal-fade tilt-card" style="--delay:.2s">
+        <div class="about-card-icon" aria-hidden="true">⚡</div>
+        <h3 data-i18n="about.card1Title">Driven by Curiosity</h3>
+        <p data-i18n="about.card1Text">Morph Junjie Kartawidjaja is a Mathematics Science student at KAIST with deep interests in mathematics, software development, research, and digital innovation.</p>
+      </div>
+      <div class="about-card glass-card reveal-fade tilt-card" style="--delay:.3s">
+        <div class="about-card-icon" aria-hidden="true">🌏</div>
+        <h3 data-i18n="about.card2Title">Global Perspective</h3>
+        <p data-i18n="about.card2Text">Originally from Indonesia, studying at one of Asia's most prestigious STEM universities in South Korea — bridging cultures, languages, and disciplines.</p>
+      </div>
+      <div class="about-card glass-card reveal-fade tilt-card" style="--delay:.4s">
+        <div class="about-card-icon" aria-hidden="true">🔬</div>
+        <h3 data-i18n="about.card3Title">Research & Innovation</h3>
+        <p data-i18n="about.card3Text">Combining rigorous mathematical thinking with hands-on engineering to tackle complex problems across AI, cybersecurity, and data science.</p>
+      </div>
+      <div class="about-card about-card--wide glass-card reveal-fade tilt-card" style="--delay:.5s">
+        <div class="about-interests">
+          <h3 data-i18n="about.interestsTitle">Interests</h3>
+          <div class="interest-tags" role="list">
+            <span class="tag" role="listitem">Mathematics</span>
+            <span class="tag" role="listitem">Research</span>
+            <span class="tag" role="listitem">Programming</span>
+            <span class="tag" role="listitem">Technology</span>
+            <span class="tag" role="listitem">Data Analysis</span>
+            <span class="tag" role="listitem">Web Development</span>
+            <span class="tag" role="listitem">Digital Innovation</span>
+            <span class="tag" role="listitem">Problem Solving</span>
+            <span class="tag" role="listitem">Artificial Intelligence</span>
+            <span class="tag" role="listitem">Cybersecurity</span>
+            <span class="tag" role="listitem">Visualization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SKILLS
+════════════════════════════════════════ -->
+<section id="skills" class="section" aria-label="Skills">
+  <div class="container">
+    <div class="section-eyebrow reveal-fade" data-i18n="skills.eyebrow">What I Know</div>
+    <h2 class="section-title reveal-fade" style="--delay:.1s" data-i18n="skills.title">Skills & Expertise</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-category glass-card reveal-fade tilt-card" style="--delay:.2s">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon" aria-hidden="true">💻</span>
+          <h3 data-i18n="skills.prog">Programming</h3>
+        </div>
+        <div class="skill-tags" role="list">
+          <span class="stag purple" role="listitem">Python</span>
+          <span class="stag purple" role="listitem">C++</span>
+          <span class="stag purple" role="listitem">JavaScript</span>
+          <span class="stag purple" role="listitem">Lua</span>
+          <span class="stag purple" role="listitem">Java</span>
+          <span class="stag purple" role="listitem">C#</span>
+          <span class="stag purple" role="listitem">Go</span>
+          <span class="stag purple" role="listitem">Rust</span>
+          <span class="stag purple" role="listitem">R</span>
+          <span class="stag purple" role="listitem">MATLAB</span>
+          <span class="stag purple" role="listitem">PHP</span>
+          <span class="stag purple" role="listitem">Swift</span>
+          <span class="stag purple" role="listitem">Kotlin</span>
+        </div>
+      </div>
+
+      <div class="skill-category glass-card reveal-fade tilt-card" style="--delay:.3s">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon" aria-hidden="true">∑</span>
+          <h3 data-i18n="skills.math">Mathematics</h3>
+        </div>
+        <div class="skill-tags" role="list">
+          <span class="stag red" role="listitem">Calculus</span>
+          <span class="stag red" role="listitem">Linear Algebra</span>
+          <span class="stag red" role="listitem">Statistics</span>
+          <span class="stag red" role="listitem">Mathematical Modeling</span>
+          <span class="stag red" role="listitem">Number Theory</span>
+          <span class="stag red" role="listitem">Discrete Mathematics</span>
+          <span class="stag red" role="listitem">Optimization</span>
+          <span class="stag red" role="listitem">Probability</span>
+        </div>
+      </div>
+
+      <div class="skill-category glass-card reveal-fade tilt-card" style="--delay:.4s">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon" aria-hidden="true">🌐</span>
+          <h3 data-i18n="skills.dev">Development</h3>
+        </div>
+        <div class="skill-tags" role="list">
+          <span class="stag blue" role="listitem">HTML</span>
+          <span class="stag blue" role="listitem">CSS</span>
+          <span class="stag blue" role="listitem">JavaScript</span>
+          <span class="stag blue" role="listitem">Responsive Design</span>
+          <span class="stag blue" role="listitem">UI/UX</span>
+          <span class="stag blue" role="listitem">Web Security</span>
+          <span class="stag blue" role="listitem">API Integration</span>
+          <span class="stag blue" role="listitem">Data Visualization</span>
+          <span class="stag blue" role="listitem">AI/ML Basics</span>
+        </div>
+      </div>
+
+      <div class="skill-category glass-card reveal-fade tilt-card" style="--delay:.5s">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon" aria-hidden="true">🛠</span>
+          <h3 data-i18n="skills.tools">Tools</h3>
+        </div>
+        <div class="skill-tags" role="list">
+          <span class="stag green" role="listitem">Git</span>
+          <span class="stag green" role="listitem">GitHub</span>
+          <span class="stag green" role="listitem">VS Code</span>
+          <span class="stag green" role="listitem">Figma</span>
+          <span class="stag green" role="listitem">Docker</span>
+          <span class="stag green" role="listitem">Postman</span>
+          <span class="stag green" role="listitem">Jupyter</span>
+          <span class="stag green" role="listitem">LaTeX</span>
+          <span class="stag green" role="listitem">Photoshop</span>
+          <span class="stag green" role="listitem">Illustrator</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     COLLABORATIONS
+════════════════════════════════════════ -->
+<section id="collabs" class="section" aria-label="Collaborations">
+  <div class="container">
+    <div class="section-eyebrow reveal-fade" data-i18n="collabs.eyebrow">Worked With</div>
+    <h2 class="section-title reveal-fade" style="--delay:.1s" data-i18n="collabs.title">Collaborations</h2>
+
+    <div class="collab-grid">
+      <div class="collab-card glass-card reveal-fade tilt-card" style="--delay:.2s" aria-label="Spotify">
+        <img src="assets/collab-logos/spotify.png" alt="Spotify" loading="lazy" onerror="this.outerHTML='<span class=collab-fallback>Spotify</span>'" />
+        <span class="collab-name">Spotify</span>
+      </div>
+      <div class="collab-card glass-card reveal-fade tilt-card" style="--delay:.3s" aria-label="Google Indonesia">
+        <img src="assets/collab-logos/google.png" alt="Google Indonesia" loading="lazy" onerror="this.outerHTML='<span class=collab-fallback>Google</span>'" />
+        <span class="collab-name" data-i18n="collabs.google">Google Indonesia</span>
+      </div>
+      <div class="collab-card glass-card reveal-fade tilt-card" style="--delay:.4s" aria-label="Samsung Indonesia">
+        <img src="assets/collab-logos/samsung.png" alt="Samsung Indonesia" loading="lazy" onerror="this.outerHTML='<span class=collab-fallback>Samsung</span>'" />
+        <span class="collab-name" data-i18n="collabs.samsung">Samsung Indonesia</span>
+      </div>
+      <div class="collab-card glass-card reveal-fade tilt-card" style="--delay:.5s" aria-label="ZOWIE by BenQ">
+        <img src="assets/collab-logos/zowie.png" alt="ZOWIE by BenQ" loading="lazy" onerror="this.outerHTML='<span class=collab-fallback>ZOWIE</span>'" />
+        <span class="collab-name">ZOWIE by BenQ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     PROJECTS
+════════════════════════════════════════ -->
+<section id="projects" class="section" aria-label="Projects">
+  <div class="container">
+    <div class="section-eyebrow reveal-fade" data-i18n="projects.eyebrow">What I've Built</div>
+    <h2 class="section-title reveal-fade" style="--delay:.1s" data-i18n="projects.title">Projects</h2>
+
+    <div class="projects-grid">
+
+      <article class="project-card glass-card reveal-fade" style="--delay:.2s">
+        <div class="project-img-wrap">
+          <img src="assets/project-images/math.png" alt="Mathematics Project" loading="lazy" onerror="this.style.display='none'" />
+          <div class="project-img-fallback" aria-hidden="true">∑</div>
+        </div>
+        <div class="project-info">
+          <span class="project-cat" data-i18n="projects.cat.math">Mathematics</span>
+          <h3 data-i18n="projects.math.title">Advanced Mathematical Modeling</h3>
+          <p data-i18n="projects.math.desc">Exploring complex systems through differential equations, optimization theory, and numerical analysis to solve real-world problems.</p>
+          <div class="project-tags" role="list">
+            <span class="ptag" role="listitem">MATLAB</span>
+            <span class="ptag" role="listitem">Python</span>
+            <span class="ptag" role="listitem">LaTeX</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass-card reveal-fade" style="--delay:.25s">
+        <div class="project-img-wrap">
+          <img src="assets/project-images/research.png" alt="Research Project" loading="lazy" onerror="this.style.display='none'" />
+          <div class="project-img-fallback" aria-hidden="true">🔬</div>
+        </div>
+        <div class="project-info">
+          <span class="project-cat" data-i18n="projects.cat.research">Research</span>
+          <h3 data-i18n="projects.research.title">Computational Research Platform</h3>
+          <p data-i18n="projects.research.desc">A research environment for running mathematical experiments, collecting data, and generating insightful visual reports.</p>
+          <div class="project-tags" role="list">
+            <span class="ptag" role="listitem">Python</span>
+            <span class="ptag" role="listitem">Jupyter</span>
+            <span class="ptag" role="listitem">R</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass-card reveal-fade" style="--delay:.3s">
+        <div class="project-img-wrap">
+          <img src="assets/project-images/programming.png" alt="Programming Project" loading="lazy" onerror="this.style.display='none'" />
+          <div class="project-img-fallback" aria-hidden="true">⌨️</div>
+        </div>
+        <div class="project-info">
+          <span class="project-cat" data-i18n="projects.cat.prog">Programming</span>
+          <h3 data-i18n="projects.prog.title">Systems Programming Engine</h3>
+          <p data-i18n="projects.prog.desc">High-performance computational engine written in C++ and Rust, optimized for low-latency mathematical operations.</p>
+          <div class="project-tags" role="list">
+            <span class="ptag" role="listitem">C++</span>
+            <span class="ptag" role="listitem">Rust</span>
+            <span class="ptag" role="listitem">Go</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass-card reveal-fade" style="--delay:.35s">
+        <div class="project-img-wrap">
+          <img src="assets/project-images/webdev.png" alt="Web Development Project" loading="lazy" onerror="this.style.display='none'" />
+          <div class="project-img-fallback" aria-hidden="true">🌐</div>
+        </div>
+        <div class="project-info">
+          <span class="project-cat" data-i18n="projects.cat.web">Web Development</span>
+          <h3 data-i18n="projects.web.title">Academic Portal UI</h3>
+          <p data-i18n="projects.web.desc">A responsive, accessibility-first academic portal with interactive dashboards, grade tracking, and schedule visualization.</p>
+          <div class="project-tags" role="list">
+            <span class="ptag" role="listitem">HTML</span>
+            <span class="ptag" role="listitem">CSS</span>
+            <span class="ptag" role="listitem">JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass-card reveal-fade" style="--delay:.4s">
+        <div class="project-img-wrap">
+          <img src="assets/project-images/interactive.png" alt="Interactive Application" loading="lazy" onerror="this.style.display='none'" />
+          <div class="project-img-fallback" aria-hidden="true">🎮</div>
+        </div>
+        <div class="project-info">
+          <span class="project-cat" data-i18n="projects.cat.interactive">Interactive</span>
+          <h3 data-i18n="projects.interactive.title">Interactive Math Visualizer</h3>
+          <p data-i18n="projects.interactive.desc">Real-time visualization tool for exploring mathematical functions, fractals, and topological surfaces in the browser.</p>
+          <div class="project-tags" role="list">
+            <span class="ptag" role="listitem">JavaScript</span>
+            <span class="ptag" role="listitem">Canvas API</span>
+            <span class="ptag" role="listitem">WebGL</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass-card reveal-fade" style="--delay:.45s">
+        <div class="project-img-wrap">
+          <img src="assets/project-images/ai.png" alt="AI Project" loading="lazy" onerror="this.style.display='none'" />
+          <div class="project-img-fallback" aria-hidden="true">🤖</div>
+        </div>
+        <div class="project-info">
+          <span class="project-cat" data-i18n="projects.cat.ai">Artificial Intelligence</span>
+          <h3 data-i18n="projects.ai.title">ML Pattern Recognition</h3>
+          <p data-i18n="projects.ai.desc">A machine learning pipeline for pattern recognition in mathematical datasets using neural networks and statistical modeling.</p>
+          <div class="project-tags" role="list">
+            <span class="ptag" role="listitem">Python</span>
+            <span class="ptag" role="listitem">TensorFlow</span>
+            <span class="ptag" role="listitem">NumPy</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass-card reveal-fade" style="--delay:.5s">
+        <div class="project-img-wrap">
+          <img src="assets/project-images/data.png" alt="Data Analysis Project" loading="lazy" onerror="this.style.display='none'" />
+          <div class="project-img-fallback" aria-hidden="true">📊</div>
+        </div>
+        <div class="project-info">
+          <span class="project-cat" data-i18n="projects.cat.data">Data Analysis</span>
+          <h3 data-i18n="projects.data.title">Statistical Data Pipeline</h3>
+          <p data-i18n="projects.data.desc">End-to-end data pipeline for cleaning, analyzing, and visualizing large datasets with automated report generation.</p>
+          <div class="project-tags" role="list">
+            <span class="ptag" role="listitem">Python</span>
+            <span class="ptag" role="listitem">Pandas</span>
+            <span class="ptag" role="listitem">R</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass-card reveal-fade" style="--delay:.55s">
+        <div class="project-img-wrap">
+          <img src="assets/project-images/security.png" alt="Security Project" loading="lazy" onerror="this.style.display='none'" />
+          <div class="project-img-fallback" aria-hidden="true">🔐</div>
+        </div>
+        <div class="project-info">
+          <span class="project-cat" data-i18n="projects.cat.security">Cybersecurity</span>
+          <h3 data-i18n="projects.security.title">Cryptographic Toolkit</h3>
+          <p data-i18n="projects.security.desc">A research toolkit implementing and analyzing classical and modern cryptographic algorithms with performance benchmarks.</p>
+          <div class="project-tags" role="list">
+            <span class="ptag" role="listitem">Python</span>
+            <span class="ptag" role="listitem">C++</span>
+            <span class="ptag" role="listitem">Mathematics</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     EDUCATION
+════════════════════════════════════════ -->
+<section id="education" class="section" aria-label="Education">
+  <div class="container">
+    <div class="section-eyebrow reveal-fade" data-i18n="edu.eyebrow">Academic Journey</div>
+    <h2 class="section-title reveal-fade" style="--delay:.1s" data-i18n="edu.title">Education</h2>
+
+    <div class="timeline">
+      <div class="timeline-item reveal-fade" style="--delay:.2s">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card glass-card tilt-card">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-school">KAIST</h3>
+              <p class="timeline-program" data-i18n="edu.program">B.Sc. Mathematics Science</p>
+            </div>
+            <div class="timeline-meta">
+              <span class="timeline-date">2024 – <span data-i18n="edu.present">Present</span></span>
+              <span class="timeline-badge" data-i18n="edu.badge">Semester 4</span>
+            </div>
+          </div>
+          <p class="timeline-desc" data-i18n="edu.desc">Korea Advanced Institute of Science and Technology (KAIST) — one of Asia's most prestigious STEM universities, located in Daejeon, South Korea. Specializing in pure and applied mathematics with coursework spanning calculus, algebra, probability, and computational mathematics.</p>
+          <div class="timeline-tags" role="list">
+            <span class="ttag" role="listitem">Mathematics</span>
+            <span class="ttag" role="listitem">Computer Science</span>
+            <span class="ttag" role="listitem">Research</span>
+            <span class="ttag" role="listitem">South Korea</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     STATISTICS
+════════════════════════════════════════ -->
+<section id="stats" class="section" aria-label="Statistics">
+  <div class="container">
+    <div class="section-eyebrow reveal-fade" data-i18n="stats.eyebrow">By the Numbers</div>
+    <h2 class="section-title reveal-fade" style="--delay:.1s" data-i18n="stats.title">Statistics</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card glass-card reveal-fade tilt-card" style="--delay:.2s">
+        <span class="stat-card-value counter" data-target="2024" data-format="year">2024</span>
+        <span class="stat-card-label" data-i18n="stats.kaist">Joined KAIST</span>
+      </div>
+      <div class="stat-card glass-card reveal-fade tilt-card" style="--delay:.25s">
+        <span class="stat-card-value counter" data-target="4">4</span>
+        <span class="stat-card-label" data-i18n="stats.semester">Current Semester</span>
+      </div>
+      <div class="stat-card glass-card reveal-fade tilt-card" style="--delay:.3s">
+        <span class="stat-card-value">🇮🇩</span>
+        <span class="stat-card-label" data-i18n="stats.origin">Origin · Indonesia</span>
+      </div>
+      <div class="stat-card glass-card reveal-fade tilt-card" style="--delay:.35s">
+        <span class="stat-card-value">🇰🇷</span>
+        <span class="stat-card-label" data-i18n="stats.location">Location · South Korea</span>
+      </div>
+      <div class="stat-card glass-card reveal-fade tilt-card" style="--delay:.4s">
+        <span class="stat-card-value counter" data-target="12" data-suffix="+">12+</span>
+        <span class="stat-card-label" data-i18n="stats.langs">Programming Languages</span>
+      </div>
+      <div class="stat-card glass-card reveal-fade tilt-card" style="--delay:.45s">
+        <span class="stat-card-value counter" data-target="8">8</span>
+        <span class="stat-card-label" data-i18n="stats.projects">Projects Built</span>
+      </div>
+      <div class="stat-card glass-card reveal-fade tilt-card" style="--delay:.5s">
+        <span class="stat-card-value counter" data-target="4">4</span>
+        <span class="stat-card-label" data-i18n="stats.collabs">Collaborations</span>
+      </div>
+      <div class="stat-card glass-card reveal-fade tilt-card" style="--delay:.55s">
+        <span class="stat-card-value counter" data-target="11">11</span>
+        <span class="stat-card-label" data-i18n="stats.interests">Interests</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+<section id="testimonials" class="section" aria-label="Testimonials">
+  <div class="container">
+    <div class="section-eyebrow reveal-fade" data-i18n="testi.eyebrow">What Professors Say</div>
+    <h2 class="section-title reveal-fade" style="--delay:.1s" data-i18n="testi.title">Testimonials</h2>
+
+    <div class="testi-grid">
+
+      <blockquote class="testi-card glass-card reveal-fade tilt-card" style="--delay:.2s">
+        <div class="testi-quote-icon" aria-hidden="true">"</div>
+        <p data-i18n="testi.kim">"Morph demonstrates exceptional analytical skills and creativity in mathematical modeling."</p>
+        <footer class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">K</div>
+          <div>
+            <cite class="testi-name">Prof. Kim</cite>
+            <span class="testi-role">KAIST Mathematics Science</span>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testi-card glass-card reveal-fade tilt-card" style="--delay:.3s">
+        <div class="testi-quote-icon" aria-hidden="true">"</div>
+        <p data-i18n="testi.lee">"His dedication to research and problem-solving sets him apart from his peers."</p>
+        <footer class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">L</div>
+          <div>
+            <cite class="testi-name">Prof. Lee</cite>
+            <span class="testi-role">KAIST Mathematics Science</span>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testi-card glass-card reveal-fade tilt-card" style="--delay:.4s">
+        <div class="testi-quote-icon" aria-hidden="true">"</div>
+        <p data-i18n="testi.park">"Morph combines technical expertise with innovative thinking, making him a valuable contributor to any project."</p>
+        <footer class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">P</div>
+          <div>
+            <cite class="testi-name">Prof. Park</cite>
+            <span class="testi-role">KAIST Mathematics Science</span>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testi-card glass-card reveal-fade tilt-card" style="--delay:.5s">
+        <div class="testi-quote-icon" aria-hidden="true">"</div>
+        <p data-i18n="testi.choi">"Morph's ability to connect mathematics with digital innovation is remarkable."</p>
+        <footer class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">C</div>
+          <div>
+            <cite class="testi-name">Prof. Choi</cite>
+            <span class="testi-role">KAIST Mathematics Science</span>
+          </div>
+        </footer>
+      </blockquote>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+<section id="contact" class="section" aria-label="Contact">
+  <div class="container">
+    <div class="section-eyebrow reveal-fade" data-i18n="contact.eyebrow">Get In Touch</div>
+    <h2 class="section-title reveal-fade" style="--delay:.1s" data-i18n="contact.title">Contact</h2>
+    <p class="contact-sub reveal-fade" style="--delay:.2s" data-i18n="contact.sub">Open to research collaborations, projects, and conversations about mathematics, technology, and innovation.</p>
+
+    <div class="contact-grid">
+
+      <a href="mailto:morph@example.com" class="contact-card glass-card reveal-fade tilt-card" style="--delay:.25s" aria-label="Email Morph">
+        <div class="contact-icon">
+          <img src="assets/icons/email.svg" alt="" aria-hidden="true" onerror="this.outerHTML='<span aria-hidden=true>✉️</span>'" />
+        </div>
+        <div class="contact-info">
+          <span class="contact-platform" data-i18n="contact.email">Email</span>
+          <span class="contact-handle">morph@kaist.ac.kr</span>
+        </div>
+        <div class="contact-arrow" aria-hidden="true">→</div>
+      </a>
+
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card reveal-fade tilt-card" style="--delay:.3s" aria-label="GitHub profile">
+        <div class="contact-icon">
+          <img src="assets/icons/github.svg" alt="" aria-hidden="true" onerror="this.outerHTML='<span aria-hidden=true>🐙</span>'" />
+        </div>
+        <div class="contact-info">
+          <span class="contact-platform">GitHub</span>
+          <span class="contact-handle">@morphjunjie</span>
+        </div>
+        <div class="contact-arrow" aria-hidden="true">→</div>
+      </a>
+
+      <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card reveal-fade tilt-card" style="--delay:.35s" aria-label="LinkedIn profile">
+        <div class="contact-icon">
+          <img src="assets/icons/linkedin.svg" alt="" aria-hidden="true" onerror="this.outerHTML='<span aria-hidden=true>💼</span>'" />
+        </div>
+        <div class="contact-info">
+          <span class="contact-platform">LinkedIn</span>
+          <span class="contact-handle">Morph Junjie Kartawidjaja</span>
+        </div>
+        <div class="contact-arrow" aria-hidden="true">→</div>
+      </a>
+
+      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card reveal-fade tilt-card" style="--delay:.4s" aria-label="Instagram profile">
+        <div class="contact-icon">
+          <img src="assets/icons/instagram.svg" alt="" aria-hidden="true" onerror="this.outerHTML='<span aria-hidden=true>📸</span>'" />
+        </div>
+        <div class="contact-info">
+          <span class="contact-platform">Instagram</span>
+          <span class="contact-handle">@morphjunjie</span>
+        </div>
+        <div class="contact-arrow" aria-hidden="true">→</div>
+      </a>
+
+      <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card reveal-fade tilt-card" style="--delay:.45s" aria-label="Discord">
+        <div class="contact-icon">
+          <img src="assets/icons/discord.svg" alt="" aria-hidden="true" onerror="this.outerHTML='<span aria-hidden=true>🎮</span>'" />
+        </div>
+        <div class="contact-info">
+          <span class="contact-platform">Discord</span>
+          <span class="contact-handle">mjunjie</span>
+        </div>
+        <div class="contact-arrow" aria-hidden="true">→</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p class="footer-copy">© 2026 Morph Junjie Kartawidjaja. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    <p class="footer-made" data-i18n="footer.made">Crafted with mathematics, code, and curiosity.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
